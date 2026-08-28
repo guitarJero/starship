@@ -3,6 +3,7 @@
 format = """
 (fg:color_fg0)\
 $os\
+${custom.server_id}\
 $username\
 $directory\
 $git_branch\
@@ -180,3 +181,10 @@ vimcmd_symbol = '[❮](bold fg:color_green)'
 vimcmd_replace_one_symbol = '[❮](bold fg:color_purple)'
 vimcmd_replace_symbol = '[❮](bold fg:color_purple)'
 vimcmd_visual_symbol = '[❮](bold fg:color_yellow)'
+
+[custom.server_id]
+command = "echo $SERVER_ID"
+when = 'test "$SERVER_ID"'
+# prefix = ''
+style = "fg:color_fg0"
+format = " [(\\($output\\))]($style)"
