@@ -1,5 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
+add_newline = false
+
 format = """
 (fg:color_fg0)\
 $os\
@@ -14,13 +16,18 @@ $kotlin\
 $python\
 $nodejs\
 $fill\
-$cmd_duration\
-$time\
 \n$character"""
 
-right_format=""
+right_format=" $cmd_duration $time"
 
 palette = 'tokyo_night'
+
+[profiles]
+transient = "$fill\n$character"
+
+# [fill]
+# symbol = '═'
+# style = "fg:color_fg5"
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
